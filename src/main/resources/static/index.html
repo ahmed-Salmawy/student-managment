@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <form >
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Student name here...">
+                </div>
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number</label>
+                    <input type="text" id="rollNumber" class="form-control" placeholder="roll number...">
+                </div>
+                <div class="form-group">
+                    <label for="fathersName">Student father's name</label>
+                    <input type="text" id="fathersName" class="form-control" placeholder="father name ...">
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade</label>
+                    <input type="text" id="grade" class="form-control" placeholder="grade ...">
+                </div>
+
+                <button id="addStudent" class="btn btn-default" type="submit">Add Student</button>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <form >
+                <div class="form-group">
+                    <label for="totalMarks">Total Marks</label>
+                    <input type="text" id="totalMarks" class="form-control" placeholder="Total Marks">
+                </div>
+                <div class="form-group">
+                    <label for="obtainedMarks">Obtained Marks</label>
+                    <input type="text" id="obtainedMarks" class="form-control" placeholder="Obtained Marks...">
+                </div>
+                <div class="form-group">
+                    <label for="resultRollNumber">RollNumber</label>
+                    <input type="text" id="resultRollNumber" class="form-control" placeholder="Roll Number ...">
+                </div>               
+
+                <button id="saveResult" class="btn btn-default" type="submit">Save Result</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Greetings</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
